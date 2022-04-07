@@ -27,17 +27,28 @@ $(document).ready(function(){
 
 function colorChanger(hourBlock){
     if (currentHour == hourBlock){
-        $(this).addClass(".present")
+        var change = "present"
+        return change;
     }
     else if (currentHour < hourBlock){
-        $(this).addClass(".future")
+        var change = "future"
+        return change; 
     }
     else if(currentHour > hourBlock ){
-        $(this).addClass(".past")
+        var change = "past"
+        return change;
     }
 };
 
-//$("#hour-nine").siblings("information")colorChanger(hourNine);
+$("#hour-nine").children(".information").addClass(colorChanger(hourNine));
+$("#hour-ten").children(".information").addClass(colorChanger(hourTen));
+$("#hour-eleven").children(".information").addClass(colorChanger(hourEleven));
+$("#hour-twelve").children(".information").addClass(colorChanger(hourTwelve));
+$("#hour-one").children(".information").addClass(colorChanger(hourOne));
+$("#hour-two").children(".information").addClass(colorChanger(hourTwo));
+$("#hour-three").children(".information").addClass(colorChanger(hourThree));
+$("#hour-four").children(".information").addClass(colorChanger(hourFour));
+$("#hour-five").children(".information").addClass(colorChanger(hourFive));
 
 $("#hour-nine .information").val(localStorage.getItem("hour-nine"));
 $("#hour-ten .information").val(localStorage.getItem("hour-ten"));
